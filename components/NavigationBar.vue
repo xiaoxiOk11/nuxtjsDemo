@@ -3,14 +3,25 @@
     <div class="container">
       <div class="all-categories">全部商品分类</div>
       <nav class="main-nav">
-        <a href="#">首页</a>
-        <a href="#">匠心精选 <span class="badge hot">HOT</span></a>
-        <a href="#">知识专区</a>
-        <a href="#">论文评述</a>
-        <a href="#">开学季大促 <span class="badge boom">BOOM</span></a>
-        <a href="#">分销专区 <span class="badge boom">BOOM</span></a>
-        <a href="#">清仓专区 <span class="badge new">NEW</span></a>
-        <a href="#">关于探索</a>
+        <div class="title">首页</div>
+        <div class="title">匠心精选</div>
+        <el-dropdown placement="bottom">
+          <div class="title dropDown">知识专区</div>
+          <template #dropdown>
+            <el-dropdown-menu>
+              <el-dropdown-item>公开标准</el-dropdown-item>
+              <el-dropdown-item>能力验证</el-dropdown-item>
+              <el-dropdown-item>产品目录</el-dropdown-item>
+              <el-dropdown-item>专题资料</el-dropdown-item>
+              <el-dropdown-item>其他资料</el-dropdown-item>
+            </el-dropdown-menu>
+          </template>
+        </el-dropdown>
+        <div class="title">论文评述</div>
+        <div class="title">开学季大促 <span class="badge boom">BOOM</span></div>
+        <div class="title">分销专区 <span class="badge boom">BOOM</span></div>
+        <div class="title">清仓专区 <span class="badge new">NEW</span></div>
+        <div class="title">关于探索</div>
       </nav>
       <div class="my-cart">
         <a href="#" class="cart-pill"
@@ -23,9 +34,12 @@
 </template>
 
 <style scoped lang="scss">
+*:focus-visible {
+  outline: none !important;
+}
 .navigation-bar {
   background: #fff; // background-color: #0b7bff;
-  border-bottom: 3px solid #007bff;
+  border-bottom: 3px solid #006ecd;
 
   color: #fff;
   // box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
@@ -42,12 +56,12 @@
   }
 
   .all-categories {
-    background-color: #007bff;
+    background-color: #006ecd;
     padding: 12px 20px;
     cursor: pointer;
     font-weight: 600;
     text-align: center;
-    border-radius: 4px;
+    // border-radius: 4px;
   }
 
   .main-nav {
@@ -56,11 +70,13 @@
 
     gap: 20px;
     flex: 1;
-    a {
+    .title {
       color: #000;
       text-decoration: none;
       position: relative;
       font-size: 16px;
+      display: flex;
+      align-items: center;
       &:hover {
         opacity: 0.9;
       }

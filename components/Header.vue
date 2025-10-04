@@ -2,10 +2,7 @@
   <div class="header">
     <div class="container">
       <div class="logo">
-        <img
-          src="https://via.placeholder.com/150x50.png?text=Logo"
-          alt="Logo"
-        />
+        <img src="../assets/images/topLotgo.gif" alt="Logo" />
       </div>
       <div class="search-area">
         <div class="search-row">
@@ -13,9 +10,11 @@
             type="text"
             placeholder="搜索编号、原始编号、中文名、分子式、CAS号、MDL号"
           />
-          <button class="btn btn-primary">搜索</button>
-          <button class="btn btn-primary outline">结构式搜索</button>
-          <button class="btn btn-accent">高级搜索</button>
+          <div>
+            <button class="btn btn-primary">搜索</button>
+            <button class="btn btn-primary outline">结构式搜索</button>
+            <button class="btn btn-accent">高级搜索</button>
+          </div>
         </div>
         <div class="hot-searches">
           <span class="label">热门搜索：</span>
@@ -55,25 +54,29 @@
   .search-row {
     display: flex;
     align-items: center;
-    gap: 12px;
+    // gap: 12px;
     width: 100%;
-
+    gap: 2px;
     input {
       // flex: 1 1 820px;
-      height: 52px;
-      padding: 0 16px;
+      // height: 52px;
+      padding: 0 4px;
+      height: 40px;
       border: 2px solid #0b7bff;
-      border-radius: 8px;
+      border-radius: 2px;
       outline: none;
       box-shadow: 0 0 0 2px rgba(11, 123, 255, 0.08) inset;
       font-size: 14px;
       min-width: 400px;
     }
-
+    div {
+      display: flex;
+      gap: 10px;
+    }
     .btn {
-      height: 52px;
+      height: 42px;
       padding: 0 22px;
-      border-radius: 8px;
+      border-radius: 2px;
       border: 2px solid transparent;
       cursor: pointer;
       white-space: nowrap;
@@ -84,12 +87,6 @@
     .btn-primary {
       background: #0b7bff;
       color: #fff;
-      border-color: #0b7bff;
-    }
-
-    .btn-primary.outline {
-      background: #fff;
-      color: #0b7bff;
       border-color: #0b7bff;
     }
 
