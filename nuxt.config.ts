@@ -1,20 +1,18 @@
-// nuxt.config.ts (推荐的简化版本)
+// nuxt.config.ts (最终的、最简化的推荐版本)
 
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
 
-  // 核心配置：只需要这一行就够了！
-  // 它会自动处理组件、样式按需引入和 transpile
+  // 核心配置：只需要这一行，它会处理好组件、图标和样式的一切！
   modules: ["@element-plus/nuxt"],
-
-  // 可选：如果你需要对 element-plus 进行更细粒度的配置，可以加这个
-  // elementPlus: {
-  //   /** 模块选项 */
-  // },
 
   devServer: {
     port: 3001,
     host: "localhost",
   },
+
+  // ------------------------------------------------------------------
+  // 删掉整个 'components' 配置块，因为它已经被 @element-plus/nuxt 自动处理了
+  // ------------------------------------------------------------------
 });

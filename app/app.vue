@@ -9,6 +9,7 @@
     </div>
     <MainContent />
     <SideBar />
+     <Footer />
   </div>
 </template>
 
@@ -18,6 +19,8 @@ import Header from "../components/Header.vue";
 import NavigationBar from "../components/NavigationBar.vue";
 import MainContent from "../components/MainContent.vue";
 import SideBar from "../components/SideBar.vue";
+import Footer from "../components/Footer.vue";
+
 </script>
 
 <style lang="scss">

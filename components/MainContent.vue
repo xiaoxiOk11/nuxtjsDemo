@@ -1,32 +1,34 @@
 <template>
   <div class="main-content">
     <div class="container">
-      <div>
-        <LeftContentMenu />
-      </div>
-      <div
-        class="banner-placeholder"
-        role="img"
-        aria-label="Banner 占位图"
-        ref="banner"
-      >
-        <img src="../assets/images/banner.jpg" alt="" />
-      </div>
-    </div>
-
-    <div class="goodsList">
-      <div class="swiper">
+      <div class="swiper" ref="banner">
         <el-carousel indicator-position="outside">
           <el-carousel-item v-for="item in 4" :key="item">
-            <img src="../assets/images/banner2.jpg" alt="" />
+            <img src="../assets/images/banner2.jpg" />
           </el-carousel-item>
         </el-carousel>
       </div>
+    </div>
+
+    <FeaturedContent />
+
+    <div class="goodsList">
+      <!-- 
+     -->
+      <!-- comm -->
+
 
       <section>
         <div class="product-section" v-for="i in goodsList" :key="i.id">
           <div class="section-header">
-            <h2 :id="i.id">{{ i.name }}</h2>
+            <div>
+              <h2 :id="i.id">{{ i.name }}</h2>
+            </div>
+            <div class="rightDes">
+              <div class="descItem" v-for="item in i.des" :key="item">
+                {{item}}
+              </div>
+            </div>
           </div>
           <div class="product-grid">
             <div class="product-card">
@@ -69,28 +71,57 @@
       </ul>
     </div>
   </div>
+  <!-- -->
 </template>
 
 <script setup>
 import { ref, onMounted, onUnmounted } from "vue";
-import LeftContentMenu from "./leftContentMenu.vue";
+import FeaturedContent from './FeaturedContent.vue';
 
 const showFloatingSidebar = ref(false);
 const banner = ref(null);
 
 const goodsList = ref([
   {
+    name: "1F-01 量器",
+    id: "c2F",
+    des: [
+      '烧杯',
+      '量筒',
+      '三角瓶/锥形瓶',
+      '量杯',
+    ]
+  },
+  {
     name: "2F-01 仪器耗材",
     id: "c2F",
+    des: [
+      '烧杯',
+      '量筒',
+      '三角瓶/锥形瓶',
+      '量杯',
+    ]
   },
 
   {
     name: "3F-01 安全防护",
     id: "c3F",
+    des: [
+      '烧杯',
+      '量筒',
+      '三角瓶/锥形瓶',
+      '量杯',
+    ]
   },
   {
     name: "4F-01 化学合成",
     id: "c4F",
+    des: [
+      '烧杯',
+      '量筒',
+      '三角瓶/锥形瓶',
+      '量杯',
+    ]
   },
   {
     name: "5F-01 生命科学",
@@ -119,6 +150,7 @@ const goodsList = ref([
 ]);
 const handleScroll = () => {
   if (banner.value) {
+    console.log('222',222);
     const bannerHeight = banner.value.offsetHeight;
     showFloatingSidebar.value = window.scrollY > bannerHeight;
   }
@@ -166,13 +198,6 @@ const categories = ref([
   // ... 其他主分类数据
 ]);
 
-// 用一个 ref 来追踪当前鼠标悬停在哪一个主分类上
-const activeCategory = ref(categories.value[0]); // 默认显示第一个
-
-// 更新当前激活的分类
-const handleCategoryHover = (category) => {
-  activeCategory.value = category;
-};
 
 onMounted(() => {
   window.addEventListener("scroll", handleScroll);
@@ -209,13 +234,16 @@ onMounted(() => {
 onUnmounted(() => {
   window.removeEventListener("scroll", handleScroll);
 });
+
 </script>
 
 <style scoped lang="scss">
+
 .main-content {
+  
   .container {
     display: grid;
-    grid-template-columns: 220px 1fr;
+    
     gap: 16px;
     max-width: 1200px;
     min-width: 1190px;
@@ -227,7 +255,11 @@ onUnmounted(() => {
     margin: 16px auto;
   }
   .swiper {
-    margin-top: 60px;
+    margin-top: 20px;
+    // height: 400px;
+    img{
+      height: 100% !important;
+    }
   }
   .category-panel {
     // border: 1px solid #e6e6e6;
@@ -276,8 +308,20 @@ onUnmounted(() => {
 
     .section-header {
       border-bottom: 2px solid #0b7bff;
-      padding: 10px 0;
+      // padding: 10px 0;
       margin-bottom: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .rightDes{
+        display: flex;
+        align-items: center;
+        // gap: 15px;
+  .descItem{
+    padding: 0 10px;
+    border-right: 1px solid #ccc;
+  }        
+      }
     }
 
     .product-grid {
@@ -287,7 +331,7 @@ onUnmounted(() => {
 
       .product-card {
         background: #fff;
-        border: 1px solid #e6e6e6;
+        // border: 1px solid #e6e6e6;
         transition: box-shadow 0.2s ease;
         width: 100%;
         height: 240px;

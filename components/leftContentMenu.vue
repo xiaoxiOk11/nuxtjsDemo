@@ -1,6 +1,5 @@
 <template>
-  <div class="category-panel" @mouseout="activeCategory = false">
-    <!-- 左侧主分类列表 -->
+  <div class="category-panel" @mouseout.stop="activeCategory = false">
     <div class="main-categories">
       <ul>
         <li
@@ -17,7 +16,7 @@
     </div>
 
     <!-- 右侧子分类详情 -->
-    <div v-if="activeCategory" class="sub-categories-panel">
+    <div v-if="activeCategory" class="sub-categories-panel" @mouseenter.stop>
       <div
         v-for="group in activeCategory.subGroups"
         :key="group.id"
@@ -82,7 +81,135 @@ const categories = ref([
       },
     ],
   },
-  // ... 其他主分类数据
+
+  {
+    id: 3,
+    name: "安全防护 · 办公用品 · 装修设备",
+    subGroups: [
+      {
+        id: 301,
+        title: "分子生物",
+        items: ["冻存管", "离心管盒", "PCR封板膜", "PCR板", "离心管"],
+      },
+      {
+        id: 302,
+        title: "组织学·生物通用耗材",
+        items: ["载玻片·存储盒", "盖玻片", "深孔板", "透析袋", "病理刀片"],
+      },
+    ],
+  },
+  {
+    id: 4,
+    name: "化学合成 · 催化反应 · 分子砌块",
+    subGroups: [
+      {
+        id: 401,
+        title: "分子生物",
+        items: ["冻存管", "离心管盒", "PCR封板膜", "PCR板", "离心管"],
+      },
+      {
+        id: 402,
+        title: "组织学·生物通用耗材",
+        items: ["载玻片·存储盒", "盖玻片", "深孔板", "透析袋", "病理刀片"],
+      },
+    ],
+  },
+  {
+    id: 5,
+    name: "生命科学 · 生物制药 · 体外诊断",
+    subGroups: [
+      {
+        id: 501,
+        title: "分子生物",
+        items: ["冻存管", "离心管盒", "PCR封板膜", "PCR板", "离心管"],
+      },
+      {
+        id: 502,
+        title: "组织学·生物通用耗材",
+        items: ["载玻片·存储盒", "盖玻片", "深孔板", "透析袋", "病理刀片"],
+      },
+    ],
+  },
+  {
+    id: 6,
+    name: "高纯试剂 · 材料制备 · 电池储能",
+    subGroups: [
+      {
+        id: 601,
+        title: "分子生物",
+        items: ["冻存管", "离心管盒", "PCR封板膜", "PCR板", "离心管"],
+      },
+      {
+        id: 602,
+        title: "组织学·生物通用耗材",
+        items: ["载玻片·存储盒", "盖玻片", "深孔板", "透析袋", "病理刀片"],
+      },
+    ],
+  },
+  {
+    id: 7,
+    name: "分析检测 · 标准物质 · 管制试剂",
+    subGroups: [
+      {
+        id: 701,
+        title: "分子生物",
+        items: ["冻存管", "离心管盒", "PCR封板膜", "PCR板", "离心管"],
+      },
+      {
+        id: 702,
+        title: "组织学·生物通用耗材",
+        items: ["载玻片·存储盒", "盖玻片", "深孔板", "透析袋", "病理刀片"],
+      },
+    ],
+  },
+  {
+    id: 8,
+    name: "通用仪器 · 称量仪器 · 生物仪器",
+    subGroups: [
+      {
+        id: 801,
+        title: "分子生物",
+        items: ["冻存管", "离心管盒", "PCR封板膜", "PCR板", "离心管"],
+      },
+      {
+        id: 802,
+        title: "组织学·生物通用耗材",
+        items: ["载玻片·存储盒", "盖玻片", "深孔板", "透析袋", "病理刀片"],
+      },
+    ],
+  },
+  {
+    id: 9,
+    name: "检测仪器 · 分析仪器 · 特种装置",
+    subGroups: [
+      {
+        id: 901,
+        title: "分子生物",
+        items: ["冻存管", "离心管盒", "PCR封板膜", "PCR板", "离心管"],
+      },
+      {
+        id: 902,
+        title: "组织学·生物通用耗材",
+        items: ["载玻片·存储盒", "盖玻片", "深孔板", "透析袋", "病理刀片"],
+      },
+    ],
+  },
+  {
+    id: 10,
+    name: "电子实验记录本（ELN） · ChemDraw化学结构式绘图软件",
+    subGroups: [
+      {
+        id: 1001,
+        title: "分子生物",
+        items: ["冻存管", "离心管盒", "PCR封板膜", "PCR板", "离心管"],
+      },
+      {
+        id: 1002,
+        title: "组织学·生物通用耗材",
+        items: ["载玻片·存储盒", "盖玻片", "深孔板", "透析袋", "病理刀片"],
+      },
+    ],
+  },
 ]);
 
 // 用一个 ref 来追踪当前鼠标悬停在哪一个主分类上
@@ -99,7 +226,6 @@ const handleCategoryHover = (category) => {
   max-width: 1220px;
   min-width: 1210px;
   height: 390px; /* 根据你的设计调整高度 */
-  //   border: 1px solid #e0e0e0;
   font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB",
     "Microsoft YaHei", Arial, sans-serif;
 }
@@ -119,9 +245,10 @@ const handleCategoryHover = (category) => {
 }
 .main-categories li {
   padding: 10px 20px;
-  font-size: 13px;
+  font-size: 12px;
   cursor: pointer;
   transition: background-color 0.2s;
+  color: #666;
 }
 .main-categories li:hover {
   background-color: #fff;

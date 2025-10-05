@@ -6,14 +6,13 @@
       </div>
       <div class="search-area">
         <div class="search-row">
-          <input
-            type="text"
-            placeholder="搜索编号、原始编号、中文名、分子式、CAS号、MDL号"
-          />
+          <div class="inputBox">
+            <div class="center beforeTitle">产品</div>
+            <input type="text" placeholder="货号、中文名、英文名、CAS号" />
+          </div>
           <div>
             <button class="btn btn-primary">搜索</button>
-            <button class="btn btn-primary outline">结构式搜索</button>
-            <button class="btn btn-accent">高级搜索</button>
+            <button class="btn btn-primary">一件配货</button>
           </div>
         </div>
         <div class="hot-searches">
@@ -36,8 +35,8 @@
   .container {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 24px;
+    // justify-content: space-between;
+    gap: 100px;
     max-width: 1200px;
     min-width: 1190px;
     margin: 0 auto;
@@ -47,25 +46,37 @@
     height: 56px;
   }
 
-  .search-area {
-    // flex: 1;
-  }
-
   .search-row {
     display: flex;
     align-items: center;
     // gap: 12px;
     width: 100%;
-    gap: 2px;
+    // gap: 2px;
+
+    .inputBox {
+      height: 40px;
+
+      border: 2px solid #0b7bff;
+      border-radius: 2px 0 0 2px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      .beforeTitle {
+        background: #ccc;
+        color: #000;
+        height: 100%;
+        padding: 0 15px;
+        font-size: 14px;
+      }
+    }
     input {
+      outline: none;
       // flex: 1 1 820px;
       // height: 52px;
+      border: none;
       padding: 0 4px;
-      height: 40px;
-      border: 2px solid #0b7bff;
       border-radius: 2px;
       outline: none;
-      box-shadow: 0 0 0 2px rgba(11, 123, 255, 0.08) inset;
       font-size: 14px;
       min-width: 400px;
     }
@@ -74,7 +85,7 @@
       gap: 10px;
     }
     .btn {
-      height: 42px;
+      height: 44px;
       padding: 0 22px;
       border-radius: 2px;
       border: 2px solid transparent;
@@ -83,7 +94,10 @@
       font-weight: 600;
       font-size: 14px;
     }
-
+    .btn:nth-child(1) {
+      // border-radius: 0 2px 2px 0;
+      border-radius: 0;
+    }
     .btn-primary {
       background: #0b7bff;
       color: #fff;

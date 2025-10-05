@@ -1,12 +1,19 @@
 <template>
   <div class="navigation-bar">
+
     <div class="container">
-      <div class="all-categories">全部商品分类</div>
+      <div class="all-categories" @mouseenter="showCaFalg = true" @mouseleave="showCaFalg = false">
+
+        全部商品分类
+        <LeftContentMenu class="catageList" v-if="showCaFalg" />
+
+        <!--  -->
+      </div>
       <nav class="main-nav">
         <div class="title">首页</div>
-        <div class="title">匠心精选</div>
+        <div class="title">化学词典</div>
         <el-dropdown placement="bottom">
-          <div class="title dropDown">知识专区</div>
+          <div class="title dropDown">行业资讯</div>
           <template #dropdown>
             <el-dropdown-menu>
               <el-dropdown-item>公开标准</el-dropdown-item>
@@ -17,22 +24,24 @@
             </el-dropdown-menu>
           </template>
         </el-dropdown>
-        <div class="title">论文评述</div>
-        <div class="title">开学季大促 <span class="badge boom">BOOM</span></div>
-        <div class="title">分销专区 <span class="badge boom">BOOM</span></div>
-        <div class="title">清仓专区 <span class="badge new">NEW</span></div>
-        <div class="title">关于探索</div>
+        <div class="title">技术文档</div>
+        <div class="title">专家定制</div>
+        <div class="title">独立实验室</div>
+        <div class="title">关于我们</div>
       </nav>
       <div class="my-cart">
-        <a href="#" class="cart-pill"
-          ><span class="icon">🛒</span> 我的购物车
-          <span class="count">0</span></a
-        >
+        <a href="#" class="cart-pill"><span class="icon">🛒</span> 我的购物车
+          <span class="count">0</span></a>
       </div>
     </div>
   </div>
 </template>
 
+<script setup >
+import LeftContentMenu from "./leftContentMenu.vue";
+
+const showCaFalg = ref(false)
+</script>
 <style scoped lang="scss">
 *:focus-visible {
   outline: none !important;
@@ -56,12 +65,19 @@
   }
 
   .all-categories {
+    position: relative;
     background-color: #006ecd;
     padding: 12px 20px;
     cursor: pointer;
     font-weight: 600;
     text-align: center;
-    // border-radius: 4px;
+    border-radius: 8px 8px 0 0;
+    position: relative;
+    .catageList{
+      position: absolute;
+      left: 0;
+      bottom: -390px;
+    }
   }
 
   .main-nav {

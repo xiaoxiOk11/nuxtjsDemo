@@ -2,15 +2,27 @@
   <div class="top-bar">
     <div class="container">
       <div class="left">
-        <span class="item phone"><span class="icon">☎</span> 400-111-6333</span>
-        <span class="item"><span class="icon">📍</span> 上海市</span>
+        <span class="item">全国热线: 400-111-6333</span>
       </div>
       <div class="right">
-        <a href="#">注册有惊喜 [登录]</a>
-        <a href="#">报价栏</a>
-        <a href="#">我的探索</a>
-        <a href="#">帮助中心</a>
-        <a href="#">手机版探索</a>
+        <div class="rightTitle">注册有惊喜 [登录]</div>
+        <div class="rightTitle">报价栏</div>
+        <!-- <a href="#">用户中心</a> -->
+        <el-dropdown>
+          <div class="rightTitle center">用户中心</div>
+          <template #dropdown>
+            <el-dropdown-menu>
+              <el-dropdown-item>我的订单</el-dropdown-item>
+              <el-dropdown-item>我的评价</el-dropdown-item>
+              <el-dropdown-item>心愿单</el-dropdown-item>
+              <el-dropdown-item>收货地址</el-dropdown-item>
+              <el-dropdown-item>浏览历史</el-dropdown-item>
+            </el-dropdown-menu>
+          </template>
+        </el-dropdown>
+        <div class="rightTitle">帮助中心</div>
+        <div class="rightTitle">手机版</div>
+        <div class="rightTitle">ZH</div>
       </div>
     </div>
   </div>
@@ -46,13 +58,18 @@
   .left .icon {
     margin-right: 6px;
   }
-
-  .right a {
+  .right {
+    display: flex;
+    align-items: center;
+  }
+  .right .rightTitle {
     // margin-left: 15px;
     text-decoration: none;
     color: #333;
-    border-right: 2px solid #ccc;
+    // border-right: 2px solid #ccc;
     padding: 0 10px;
+    font-size: 13px;
+    cursor: pointer;
     &:hover {
       color: #006ecd;
     }

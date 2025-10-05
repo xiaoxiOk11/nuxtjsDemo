@@ -5,12 +5,19 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
-
+:focus-visible {
+  outline: none !important;
+}
 #app {
   max-width: 100%;
   overflow-x: hidden;
 }
 
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 /* Global layout constraints */
 .page-wrapper {
   min-width: 1190px;
