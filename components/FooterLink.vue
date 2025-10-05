@@ -70,18 +70,11 @@ const footerSections = ref([
 </script>
 
 <style lang="scss" scoped>
-// 定义颜色和尺寸变量，方便统一修改
-$color-text-title: #333;
-$color-text-link: #666;
-$color-border-top: #e0e0e0;
-$color-border-separator: #ccc;
-$font-size-title: 16px;
-$font-size-link: 14px;
-
 .site-footer {
     width: 100%;
     padding: 40px 0;
-    border-top: 1px solid $color-border-top;
+    border-top: 1px solid #e0e0e0;
+    /* 直接使用颜色值 */
     background-color: #fff;
     // 使用常见的无衬线字体，优先使用中文字体
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
@@ -101,15 +94,18 @@ $font-size-link: 14px;
 
     // 对除了第一列之外的所有列，添加左边框作为分隔线
     &:not(:first-child) {
-        border-left: 1px dotted $color-border-separator;
+        border-left: 1px dotted #ccc;
+        /* 直接使用颜色值 */
     }
 
     h4 {
         margin-top: 0;
         margin-bottom: 25px;
-        font-size: $font-size-title;
-        font-weight: 600; // 字体加粗
-        color: $color-text-title;
+        font-size: 16px;
+        /* 直接使用字号 */
+        font-weight: 600;
+        color: #333;
+        /* 直接使用颜色值 */
     }
 
     ul {
@@ -127,16 +123,18 @@ $font-size-link: 14px;
     }
 
     a {
-        font-size: $font-size-link;
-        color: $color-text-link;
+        font-size: 14px;
+        /* 直接使用字号 */
+        color: #666;
+        /* 直接使用颜色值 */
         text-decoration: none;
         transition: color 0.2s ease-in-out;
 
         // 鼠标悬停时改变颜色并添加下划线
-        &:hover {
-            color: darken($color-text-link, 20%);
-            text-decoration: underline;
-        }
+        // &:hover {
+        //     color:#ccc;
+        //     text-decoration: underline;
+        // }
     }
 }
 </style>

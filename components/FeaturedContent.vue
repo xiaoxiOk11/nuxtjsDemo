@@ -20,56 +20,56 @@
         </div>
         <div class="grid-item item-one-click">
           <p>一键配货</p>
-          <img src="/assets/images/goodsImg.jpg" alt="一键配货">
+          <img src="../assets/images/goodsImg.jpg" alt="一键配货">
         </div>
         <!-- 彩色格子：修改内部结构以支持水平布局 -->
         <div class="grid-item bg-pink item-free-sample horizontal">
           <div class="text-content">
             <p>免费领样</p><span class="line"></span>
           </div>
-          <img src="/assets/images/goodsImg.jpg" alt="免费领样">
+          <img src="../assets/images/goodsImg.jpg" alt="免费领样">
         </div>
         <div class="grid-item bg-beige item-expert-custom horizontal">
           <div class="text-content">
             <p>专家定制</p><span class="line"></span>
           </div>
-          <img src="/assets/images/goodsImg.jpg" alt="专家定制">
+          <img src="../assets/images/goodsImg.jpg" alt="专家定制">
         </div>
         <div class="grid-item item-member-center">
           <p>会员中心</p>
-          <img src="/assets/images/goodsImg.jpg" alt="会员中心">
+          <img src="../assets/images/goodsImg.jpg" alt="会员中心">
         </div>
         <div class="grid-item item-e-dict">
           <p>电子化学词典</p>
-          <img src="/assets/images/goodsImg.jpg" alt="电子化学词典">
+          <img src="../assets/images/goodsImg.jpg" alt="电子化学词典">
         </div>
         <div class="grid-item item-integral-mall">
           <p>积分商城</p>
-          <img src="/assets/images/goodsImg.jpg" alt="积分商城">
+          <img src="../assets/images/goodsImg.jpg" alt="积分商城">
         </div>
         <div class="grid-item bg-light-green item-lab horizontal">
           <div class="text-content">
             <p>独立实验室</p><span class="line"></span>
           </div>
-          <img src="/assets/images/goodsImg.jpg" alt="独立实验室">
+          <img src="../assets/images/goodsImg.jpg" alt="独立实验室">
         </div>
         <div class="grid-item bg-light-brown item-coupon-center horizontal">
           <div class="text-content">
             <p>领券中心</p><span class="line"></span>
           </div>
-          <img src="/assets/images/goodsImg.jpg" alt="领券中心">
+          <img src="../assets/images/goodsImg.jpg" alt="领券中心">
         </div>
         <div class="grid-item bg-light-blue item-time-kill horizontal">
           <div class="text-content">
             <p>限时秒杀</p><span class="line"></span>
           </div>
-          <img src="/assets/images/goodsImg.jpg" alt="限时秒杀">
+          <img src="../assets/images/goodsImg.jpg" alt="限时秒杀">
         </div>
         <div class="grid-item bg-light-mint item-more-link horizontal">
           <div class="text-content">
             <p>更多</p><span class="line"></span>
           </div>
-          <img src="/assets/images/goodsImg.jpg" alt="更多">
+          <img src="../assets/images/goodsImg.jpg" alt="更多">
         </div>
       </div>
     </div>
