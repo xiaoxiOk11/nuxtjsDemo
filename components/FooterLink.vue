@@ -81,17 +81,18 @@ const footerSections = ref([
 }
 
 .footer-content {
-    max-width: 1200px;
+    max-width: 1100px;
+    min-width: 990px;
     margin: 0 auto;
     display: flex;
-    justify-content: center; // 将所有列作为一个整体居中
+    justify-content: space-between; // 将所有列作为一个整体居中
     align-items: flex-start; // 确保所有列从顶部对齐
 }
 
 .footer-column {
     text-align: left;
     padding: 0 45px; // 为每列左右设置内边距，创造出列间距
-
+    height: 180px;
     // 对除了第一列之外的所有列，添加左边框作为分隔线
     &:not(:first-child) {
         border-left: 1px dotted #ccc;

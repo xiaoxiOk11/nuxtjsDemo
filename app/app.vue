@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div class="affix-container">
+    <div class="affix-container" id="topHeader">
       <el-affix target="#app" :offset="0.1">
         <TopBar />
         <Header />

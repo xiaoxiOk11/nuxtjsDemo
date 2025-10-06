@@ -7,12 +7,16 @@
       <div class="search-area">
         <div class="search-row">
           <div class="inputBox">
-            <div class="center beforeTitle">产品</div>
+            <div class="center beforeTitle toPointer" @click="searchProFlag = !searchProFlag">{{ searchProFlag
+              ?'产品':'百科'}}</div>
             <input type="text" placeholder="货号、中文名、英文名、CAS号" />
           </div>
           <div>
             <button class="btn btn-primary">搜索</button>
-            <button class="btn btn-primary">一件配货</button>
+            <button class="btn btn-primary center">
+              <img src="../assets/images/qs.png" style="height: 20px; margin-right: 10px;">
+
+              一件配货</button>
           </div>
         </div>
         <div class="hot-searches">
@@ -26,6 +30,10 @@
   </div>
 </template>
 
+<script setup>
+
+const searchProFlag =ref(true)
+</script>
 <style scoped lang="scss">
 .header {
   background: #fff;

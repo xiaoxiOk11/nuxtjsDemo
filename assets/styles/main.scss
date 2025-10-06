@@ -8,6 +8,12 @@ body {
 :focus-visible {
   outline: none !important;
 }
+.flex_col{
+  flex-direction: column;
+}
+.toPointer{
+  cursor: pointer;
+}
 #app {
   max-width: 100%;
   overflow-x: hidden;
@@ -30,4 +36,8 @@ body {
   min-width: 1190px;
   max-width: 1200px;
   margin: 0 auto;
+}
+a{
+  // color: #ccc;
+  text-decoration: none;
 }

@@ -2,10 +2,10 @@
   <div class="navigation-bar">
 
     <div class="container">
-      <div class="all-categories" @mouseenter="showCaFalg = true" @mouseleave="showCaFalg = false">
+      <div class="all-categories" >
 
         全部商品分类
-        <LeftContentMenu class="catageList" v-if="showCaFalg" />
+       
 
         <!--  -->
       </div>
@@ -38,9 +38,7 @@
 </template>
 
 <script setup >
-import LeftContentMenu from "./leftContentMenu.vue";
 
-const showCaFalg = ref(false)
 </script>
 <style scoped lang="scss">
 *:focus-visible {
@@ -73,11 +71,7 @@ const showCaFalg = ref(false)
     text-align: center;
     border-radius: 8px 8px 0 0;
     position: relative;
-    .catageList{
-      position: absolute;
-      left: 0;
-      bottom: -390px;
-    }
+ 
   }
 
   .main-nav {

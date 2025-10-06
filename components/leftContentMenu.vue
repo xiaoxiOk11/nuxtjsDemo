@@ -213,7 +213,7 @@ const categories = ref([
 ]);
 
 // 用一个 ref 来追踪当前鼠标悬停在哪一个主分类上
-const activeCategory = ref(categories.value[0]); // 默认显示第一个
+const activeCategory = ref(-1); // 默认显示第一个
 
 // 更新当前激活的分类
 const handleCategoryHover = (category) => {
@@ -223,9 +223,8 @@ const handleCategoryHover = (category) => {
 <style scoped lang="scss">
 .category-panel {
   display: flex;
-  max-width: 1220px;
-  min-width: 1210px;
-  height: 390px; /* 根据你的设计调整高度 */
+  // min-width: 1210px;
+  height: 400px; /* 根据你的设计调整高度 */
   font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB",
     "Microsoft YaHei", Arial, sans-serif;
 }
@@ -268,6 +267,7 @@ const handleCategoryHover = (category) => {
   height: 380px;
   background-color: #fff;
   z-index: 999;
+  min-width: 900px;
   overflow: scroll;
 }
 .sub-group {

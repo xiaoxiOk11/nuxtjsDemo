@@ -1,17 +1,21 @@
 <template>
   <div class="main-content">
-    <div class="container">
-      <div class="swiper" ref="banner">
+    <div ref="banner">
+      <div class="swiper">
         <el-carousel indicator-position="outside">
           <el-carousel-item v-for="item in 4" :key="item">
             <img src="../assets/images/banner2.jpg" />
           </el-carousel-item>
         </el-carousel>
+
       </div>
+      <div class="container">
+        <LeftContentMenu class="catageList" />
+
+      </div>
+      <FeaturedContent />
+
     </div>
-
-    <FeaturedContent />
-
     <div class="goodsList">
       <!-- 
      -->
@@ -58,23 +62,15 @@
       </section>
     </div>
     <div class="floating-sidebar" v-if="showFloatingSidebar">
-      <ul>
-        <li><a href="#c2F">2F仪器耗材</a></li>
-        <li><a href="#c3F">3F安全防护</a></li>
-        <li><a href="#c4F">4F化学合成</a></li>
-        <li><a href="#c5F">5F生命科学</a></li>
-        <li><a href="#c6F">6F高纯材料</a></li>
-        <li><a href="#c7F">7F分析标物</a></li>
-        <li><a href="#c8F">8F通用仪器</a></li>
-        <li><a href="#c9F">9F分析仪器</a></li>
-        <li><a href="#c10F">10F科研软件</a></li>
-      </ul>
+      <botLeftFloatContent/>
+     </div>
     </div>
-  </div>
-  <!-- -->
+    <!-- -->
 </template>
 
 <script setup>
+import LeftContentMenu from "./leftContentMenu.vue";
+import botLeftFloatContent from "./botLeftFloatContent.vue";
 import { ref, onMounted, onUnmounted } from "vue";
 import FeaturedContent from './FeaturedContent.vue';
 
@@ -150,7 +146,7 @@ const goodsList = ref([
 ]);
 const handleScroll = () => {
   if (banner.value) {
-    console.log('222',222);
+    console.log('banner.value', banner.value.offsetHeight);
     const bannerHeight = banner.value.offsetHeight;
     showFloatingSidebar.value = window.scrollY > bannerHeight;
   }
@@ -202,7 +198,7 @@ const categories = ref([
 onMounted(() => {
   window.addEventListener("scroll", handleScroll);
   // 定义导航栏高度
-  const headerHeight = 200; // 或者动态获取: document.querySelector('.my-header').offsetHeight
+  const headerHeight = document.querySelector('#topHeader').offsetHeight; // 或者动态获取: document.querySelector('.my-header').offsetHeight
 
   document.addEventListener("click", (event) => {
     // 检查点击的是否是锚点链接
@@ -238,7 +234,11 @@ onUnmounted(() => {
 </script>
 
 <style scoped lang="scss">
-
+     .catageList {
+       position: absolute;
+      //  left: 0;
+       top: 190px;
+     }
 .main-content {
   
   .container {
@@ -254,9 +254,20 @@ onUnmounted(() => {
     min-width: 1190px;
     margin: 16px auto;
   }
+  :deep(.el-carousel__container){
+    height: 380px;
+  }
   .swiper {
     margin-top: 20px;
-    // height: 400px;
+    height: 400px;
+    position: relative;
+
+    .catageList {
+        position: absolute;
+        left: 0;
+        top: -20px;
+          margin: 0 auto;
+      }
     img{
       height: 100% !important;
     }
@@ -357,41 +368,5 @@ onUnmounted(() => {
   }
 }
 
-.floating-sidebar {
-  position: fixed;
-  top: 180px;
-  left: 0;
-  width: 120px;
-  background-color: #006ecd;
-  // border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
 
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-
-    li {
-      border-bottom: 1px solid #fff;
-
-      &:last-child {
-        border-bottom: none;
-      }
-
-      a {
-        display: block;
-        padding: 10px;
-        color: #fff;
-        text-decoration: none;
-        text-align: center;
-        font-size: 14px;
-
-        &:hover {
-          background-color: #0056b3;
-        }
-      }
-    }
-  }
-}
 </style>

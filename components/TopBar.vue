@@ -1,8 +1,9 @@
 <template>
   <div class="top-bar">
     <div class="container">
-      <div class="left">
-        <span class="item">全国热线: 400-111-6333</span>
+      <div class="left center">
+        <img src="../assets/images/phone.png"  style="height: 20px;">
+        <!-- <span class="item">全国热线: 400-111-6333</span> -->
       </div>
       <div class="right">
         <div class="rightTitle">注册有惊喜 [登录]</div>
@@ -21,13 +22,37 @@
           </template>
         </el-dropdown>
         <div class="rightTitle">帮助中心</div>
-        <div class="rightTitle">手机版</div>
+        <el-dropdown>
+          <div class="rightTitle center">手机版</div>
+          <template #dropdown>
+            <el-dropdown-menu>
+              <el-dropdown-item>
+                <ClientOnly>
+                  <div v-if="qrValue" class="qrcode-wrapper center flex_col">
+                    <QrcodeVue :value="qrValue" :size="200" level="H" render-as="svg" />
+                    <p>请用手机扫描上方二维码</p>
+                  </div>
+                  <!-- 加载时的后备内容 (可选) -->
+                  <template #fallback>
+                    <div class="loading-placeholder">
+                      <p>正在加载二维码组件...</p>
+                    </div>
+                  </template>
+                </ClientOnly>
+              </el-dropdown-item>
+            </el-dropdown-menu>
+          </template>
+        </el-dropdown>
         <div class="rightTitle">ZH</div>
       </div>
     </div>
   </div>
 </template>
 
+<script setup>
+import QrcodeVue from 'vue-qrcode';
+const qrValue = ref('https://nuxt.com');
+</script>
 <style scoped lang="scss">
 .top-bar {
   background-color: #f7f7f7;
