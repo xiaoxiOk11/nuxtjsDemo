@@ -28,18 +28,9 @@
             <el-dropdown-menu>
               <el-dropdown-item>
                 <ClientOnly>
-                  <div v-if="qrValue" class="qrcode-wrapper center flex_col">
-                    <QrcodeVue :value="qrValue" :size="200" level="H" render-as="svg" />
-                    <p>请用手机扫描上方二维码</p>
-                  </div>
-                  <!-- 加载时的后备内容 (可选) -->
-                  <template #fallback>
-                    <div class="loading-placeholder">
-                      <p>正在加载二维码组件...</p>
-                    </div>
-                  </template>
+                  <Qrcode :value="textToEncode" :size="250" render-as="img" />
                 </ClientOnly>
-             
+
               </el-dropdown-item>
             </el-dropdown-menu>
           </template>
@@ -51,8 +42,8 @@
 </template>
 
 <script setup>
-import QrcodeVue from 'vue-qrcode';
-const qrValue = ref('https://nuxt.com');
+import Qrcode from './Qrcode.vue'
+const textToEncode = ref('https://nuxt.com');
 </script>
 <style scoped lang="scss">
 .top-bar {

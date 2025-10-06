@@ -16,7 +16,7 @@
     </div>
 
     <!-- 右侧子分类详情 -->
-    <div v-if="activeCategory" class="sub-categories-panel" @mouseenter.stop>
+    <div v-if="activeCategory.subGroups" class="sub-categories-panel" @mouseenter.stop>
       <div
         v-for="group in activeCategory.subGroups"
         :key="group.id"
