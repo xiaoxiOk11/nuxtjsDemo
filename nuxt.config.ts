@@ -11,10 +11,4 @@ export default defineNuxtConfig({
     port: 3001,
     host: "localhost",
   },
-  build: {
-    transpile: ["vue-qrcode", "qrcode"],
-  },
-  // ------------------------------------------------------------------
-  // 删掉整个 'components' 配置块，因为它已经被 @element-plus/nuxt 自动处理了
-  // ------------------------------------------------------------------
 });

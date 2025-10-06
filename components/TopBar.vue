@@ -2,7 +2,7 @@
   <div class="top-bar">
     <div class="container">
       <div class="left center">
-        <img src="../assets/images/phone.png"  style="height: 20px;">
+        <img src="../assets/images/phone.png" style="height: 20px;">
         <!-- <span class="item">全国热线: 400-111-6333</span> -->
       </div>
       <div class="right">
@@ -39,6 +39,7 @@
                     </div>
                   </template>
                 </ClientOnly>
+             
               </el-dropdown-item>
             </el-dropdown-menu>
           </template>
