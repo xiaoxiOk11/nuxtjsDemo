@@ -28,7 +28,7 @@
             <el-dropdown-menu>
               <el-dropdown-item>
                 <ClientOnly>
-                  <Qrcode :value="textToEncode" :size="250" render-as="img" />
+                  <img src="../assets/images/qr.png" style="width: 200px;height: 200px;">
                 </ClientOnly>
 
               </el-dropdown-item>
@@ -42,8 +42,6 @@
 </template>
 
 <script setup>
-import Qrcode from './Qrcode.vue'
-const textToEncode = ref('https://nuxt.com');
 </script>
 <style scoped lang="scss">
 .top-bar {
