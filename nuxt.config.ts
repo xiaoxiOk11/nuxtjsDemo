@@ -11,4 +11,14 @@ export default defineNuxtConfig({
     port: 3001,
     host: "localhost",
   },
+  build: {
+    transpile: ["vue-qrcode", "qrcode"],
+  },
+
+  // 添加 Vite 特定配置
+  vite: {
+    optimizeDeps: {
+      include: ["vue-qrcode", "qrcode"],
+    },
+  },
 });
