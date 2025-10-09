@@ -15,7 +15,7 @@
     <div class="right-panel">
       <!-- 给每个 grid-item 添加一个唯一的 class 用于定位 -->
       <div class="grid-container">
-        <div class="grid-item video-promo item-video">
+        <div class="grid-item video-promo item-video center">
           <h3>企业宣传视频</h3>
         </div>
         <div class="grid-item item-one-click">
@@ -23,49 +23,50 @@
           <img src="../assets/images/goodsImg.jpg" alt="一键配货">
         </div>
         <!-- 彩色格子：修改内部结构以支持水平布局 -->
-        <div class="grid-item bg-pink item-free-sample horizontal">
+        <div class="grid-item bg-pink item-free-sample  col_between">
           <div class="text-content">
             <p>免费领样</p><span class="line"></span>
           </div>
           <img src="../assets/images/goodsImg.jpg" alt="免费领样">
         </div>
-        <div class="grid-item bg-beige item-expert-custom horizontal">
+        <div class="grid-item bg-beige item-expert-custom  col_between">
           <div class="text-content">
             <p>专家定制</p><span class="line"></span>
           </div>
           <img src="../assets/images/goodsImg.jpg" alt="专家定制">
         </div>
-        <div class="grid-item item-member-center">
+        <div class="grid-item item-member-center col_between">
           <p>会员中心</p>
           <img src="../assets/images/goodsImg.jpg" alt="会员中心">
         </div>
-        <div class="grid-item item-e-dict">
+        <div class="grid-item item-e-dict col_between">
           <p>电子化学词典</p>
           <img src="../assets/images/goodsImg.jpg" alt="电子化学词典">
         </div>
-        <div class="grid-item item-integral-mall">
+        <div class="grid-item item-integral-mall col_between">
           <p>积分商城</p>
           <img src="../assets/images/goodsImg.jpg" alt="积分商城">
         </div>
-        <div class="grid-item bg-light-green item-lab horizontal">
+        <div class="grid-item bg-light-green item-lab  col_between">
           <div class="text-content">
-            <p>独立实验室</p><span class="line"></span>
+            <p>独立实验室</p>
+            <span class="line"></span>
           </div>
           <img src="../assets/images/goodsImg.jpg" alt="独立实验室">
         </div>
-        <div class="grid-item bg-light-brown item-coupon-center horizontal">
+        <div class="grid-item bg-light-brown item-coupon-center  col_between">
           <div class="text-content">
             <p>领券中心</p><span class="line"></span>
           </div>
           <img src="../assets/images/goodsImg.jpg" alt="领券中心">
         </div>
-        <div class="grid-item bg-light-blue item-time-kill horizontal">
+        <div class="grid-item bg-light-blue item-time-kill  col_between">
           <div class="text-content">
             <p>限时秒杀</p><span class="line"></span>
           </div>
           <img src="../assets/images/goodsImg.jpg" alt="限时秒杀">
         </div>
-        <div class="grid-item bg-light-mint item-more-link horizontal">
+        <div class="grid-item bg-light-mint item-more-link  col_between">
           <div class="text-content">
             <p>更多</p><span class="line"></span>
           </div>
@@ -199,8 +200,6 @@
     padding: 10px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
 
     p {
       margin-bottom: 10px;
@@ -212,14 +211,31 @@
       max-height: 70px;
     }
   }
-
+  .center { 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .col_between{
+    display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+     
+  }
   .video-promo {
     // 继承 .grid-item 的样式，这里只写覆盖的部分
     background-color: #0099ff;
     color: white;
     font-size: 24px;
   }
-
+    .line {
+      display: block;
+      width: 15px;
+      height: 2px;
+      background-color: #ccc;
+      opacity: 1;
+  
+    }
   // --- 核心改动 3: 为水平布局的彩色格子添加样式 ---
   .grid-item.horizontal {
     flex-direction: row;
@@ -235,13 +251,7 @@
         margin-bottom: 5px;
       }
 
-      .line {
-        display: block;
-        width: 15px;
-        height: 2px;
-        background-color: currentColor;
-        opacity: 0.6;
-      }
+   
     }
 
     img {
