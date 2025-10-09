@@ -117,7 +117,7 @@
 .featured-content {
   display: flex;
   height: 450px; // 建议给一个固定高度，让 grid 布局更稳定
-  max-width: 1200px;
+  max-width: 1190px;
   min-width: 1190px;
   margin: 20px auto;
 }

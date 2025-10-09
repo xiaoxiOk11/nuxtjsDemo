@@ -86,15 +86,20 @@
 
                     <div class="rowFirst">
                         <div class=" search-input">
-                            <div style="position: relative; padding-right: 12px;"
-                                @click.stop="showSelectHandle = !showSelectHandle">
+                            <div style="position: relative; padding-right: 12px;width: 50px;"
+                                @click.stop="showSelectHandle = !showSelectHandle" class="toPointer">
                                 {{ selectVal }}
-                                <i class="arrow-icon" style="right: 0;"></i>
-                                <!--  -->
-                                <ul v-if="showSelectHandle" class="selectContent">
-                                    <li @click="selectVal = '产品'" :class="{'activeSelectEl': selectVal == '产品'}">产品</li>
-                                    <li @click="selectVal = '百科'" :class="{'activeSelectEl': selectVal == '百科'}">百科</li>
+                                <ul class="proListBox" v-if="showSelectHandle">
+                                    <li class="toPointer" @click="selectVal = '产品'"
+                                        :class="{ 'activeSelectEl': selectVal == '产品' }">
+                                        产品
+                                    </li>
+                                    <li class="toPointer" @click="selectVal = '百科'"
+                                        :class="{ 'activeSelectEl': selectVal == '百科' }">
+                                        百科
+                                    </li>
                                 </ul>
+                                <i class="arrow-icon"></i>
                             </div>
                             <div class="tooltip">
                                 <input class="" type="text" id="demandName1" autocomplete="off"
@@ -120,44 +125,45 @@
 
                 </div>
             </div>
-        </div>
+            <div class="page-nav">
+                <div class="menu">
+                    <div class="nav fl">
+                        <div class="allsort">
+                            <div class="mt"><a href="javascript:void(0)">全部商品分类</a></div>
+                        </div>
 
-        <div class="page-nav">
-            <div class="menu">
-                <div class="nav fl">
-                    <div class="allsort">
-                        <div class="mt"><a href="javascript:void(0)">全部商品分类</a></div>
+
                     </div>
 
+                    <ul>
+                        <li class="topclass321 home" id="indexId"><a href="javascript:void(0)">首 页</a></li>
+                        <li class="topclass321" id="indexId2" style="position:relative;"><a
+                                href="javascript:void(0)">化学词典</a>
+                            <span class="nav-promo-sup">HOT</span>
+                        </li>
+
+                        <li class="topclass321" id="indexId3"><a href="javascript:void(0)">行业资讯</a></li>
+                        <li class="topclass321" id="indexId5"><a href="javascript:void(0)">技术文档</a>
+                            <span class="nav-promo-sup">BOOM</span>
+                        </li>
+                        <li class="topclass321" id="indexId7">
+                            <a href="javascript:void(0)">专家定制</a>
+                        </li>
+                        <li class="topclass321" id="indexId10"><a href="javascript:void(0)">独立实验室</a>
+                            <span class="nav-promo-sup">NEW</span>
+                        </li>
+                        <li class="topclass321" id="indexId4"><a href="javascript:void(0)">关于我们</a></li>
+                    </ul>
+
+                    <div class="mycar  floatRight">
+                        <i class="mycar-icon"></i>
+                        <a href="" id="head_shoppingcar">我的购物车<span class="textRed">0</span></a>
+                    </div>
 
                 </div>
-
-                <ul>
-                    <li class="topclass321 home" id="indexId"><a href="javascript:void(0)">首 页</a></li>
-                    <li class="topclass321" id="indexId2" style="position:relative;"><a
-                            href="javascript:void(0)">化学词典</a>
-                        <span class="nav-promo-sup">HOT</span>
-                    </li>
-
-                    <li class="topclass321" id="indexId3"><a href="javascript:void(0)">行业资讯</a></li>
-                    <li class="topclass321" id="indexId5"><a href="javascript:void(0)">技术文档</a>
-                        <span class="nav-promo-sup">BOOM</span>
-                    </li>
-                    <li class="topclass321" id="indexId7">
-                        <a href="javascript:void(0)">专家定制</a>
-                    </li>
-                    <li class="topclass321" id="indexId10"><a href="javascript:void(0)">独立实验室</a>
-                        <span class="nav-promo-sup">NEW</span>
-                    </li>
-                    <li class="topclass321" id="indexId4"><a href="javascript:void(0)">关于我们</a></li>
-                </ul>
-
-                <div class="mycar  floatRight">
-                    <i class="mycar-icon"></i>
-                    <a href="" id="head_shoppingcar">我的购物车<span class="textRed">0</span></a>
-                </div>
-
             </div>
+
+
         </div>
 
 
@@ -1346,5 +1352,14 @@ const showSelectHandle = ref(false)
 }
 .activeSelectEl{
     color: #666;
+}
+.proListBox{
+    position: relative;
+    z-index: 999 !important;
+    left: 0;
+    /* height: 100px; */
+    background: #fff;
+    width: 60px;
+    text-align: center;
 }
 </style>
