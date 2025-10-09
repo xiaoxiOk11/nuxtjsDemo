@@ -1,0 +1,53 @@
+﻿ 
+html{background-color:#E3E3E3; font-size:14px; color:#000; font-family:'微软雅黑'}
+.pop{width:600px;height:500px;border:1px solid #fff;background:#fff;margin:100px auto;position:relative;z-index: 111;padding:30px;border-radius:30px;box-shadow:0 0px 8px 1px #858585;}
+.pop-head{border-bottom: 1px solid #ddd;position:relative;background:#fff;color:#000;height:40px;line-height:40px;padding:0px 10px;font-size:18px;}
+.pop-x{position:absolute;cursor:pointer;width:22px;height:22px;float:left;right:0px;top:0px;background:url(../images/close-black.png)no-repeat;}
+.pop-x a:hover{cursor:pointer;}
+.pop-content{padding:10px;height:auto;background:#fff;overflow-x:auto;overflow-y:auto;max-height:430px;}
+.pop-content .btn-primary{background:#006ECD;padding:9px 20px;border-radius: 20px;}
+.pop-content .btn-warning{padding:9px 20px;border-radius: 20px;}
+.pop-out{width:100%;height:100%;position:absolute;top:0px;}
+#mask_shadow {position: fixed;z-index: 99;left: 0;top: 0;width: 100%;height: 100%;background-color:#cdcdcd;opacity:0.7;filter:alpha(opacity=70);}
+#pop-b{position: fixed;z-index:111;width:100%;height:100%;top:0px;left:0px;}
+
+.pop-x img {display:none;}
+
+.textBut{margin-right:10px;color:#fff;border:1px solid #33ccff;width: 69px;height: 21px;font: 12px/1.6em Tahoma,sans-serif;background:#66ccff}
+.pop-content input[type="text"]{border:1px solid #ddd;height:18px;line-height:18px;width:80%;padding:2px 5px}
+.pop-content td{padding:3px;font-size:12px;}
+.pop-content .btn-tj{padding:4px 14px;font-size:14px;color:#fff;background-color:#f0ad4e;border:1px solid #f0ad4e;border-radius:3px;} 
+
+
+.pro-pop table{width:100%;font-size:12px;border:1px solid #ddd;}  
+.pro-pop th,.pro-pop td{border:1px solid #ddd;padding:3px 5px;height:18px;line-height:18px;}  
+.pro-pop th{font-weight:700} 
+.pro-pop img{vertical-align: middle;}
+
+.m-icon{display:inline-block;margin-right:20px;margin-left:40px;zoom:1;width:48px;height:48px;background:url(../images/icon48.png) -94px 0px no-repeat;}
+.ftx-04{font-size:18px;color:#ff6c00;font-family: "Microsoft YaHei";line-height: 21px;margin-bottom:5px;}
+
+/* 滚动条轨道样式 */
+::-webkit-scrollbar {
+  width: 8px; /* 设置滚动条宽度 */
+  height: 8px; /* 设置滚动条宽度 */
+}
+
+/* 滚动条滑块样式 */
+::-webkit-scrollbar-thumb {
+  background-color: #a1a1a1; /* 设置滑块背景颜色 */
+  border-radius: 4px; /* 设置滑块圆角 */
+}
+ 
+/* 滚动条轨道hover状态样式 */
+::-webkit-scrollbar-track:hover {
+  background-color: #f1f1f1; /* 设置轨道hover状态时的背景颜色 */
+}
+ 
+/* 滚动条滑块hover状态样式 */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #6b6b6b; /* 设置滑块hover状态时的背景颜色 */
+}
+
+
+
