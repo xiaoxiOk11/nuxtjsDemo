@@ -310,6 +310,9 @@
 
   }
 }
+.grid-item{
+  cursor:pointer;
+}
 .row3{
 .grid-item {
     transition: .3s linear all;
