@@ -1,4 +1,4 @@
-﻿ var pageContext="";
+﻿var pageContext="";
 jQuery(document).ready(function() {
 	
 	bind_navagator_mouseover_second_event();
@@ -29,7 +29,6 @@ $(window).scroll(function(){
 function bind_promotion_scroll_event(){
 	$("img.lazy").show().lazyload();
 	$("img.lazyShow").lazyload({ threshold : 200 });
-	lazyload_cc("loading",300);
 	//楼层导航显示
 	var scrollTop = $(this).scrollTop();
 	if(scrollTop>770){
@@ -51,42 +50,6 @@ function bind_promotion_scroll_event(){
 	
 }
 
-
-function lazyload_cc(className,beginHeight){
-	//功能：当div完整出现在屏幕时，加载。
-	//参数className，需要进行懒加载的元素的类名，要取一样的名字
-	//参数beginHeight，滚动条滚到哪里，开始监听
-	//必须有inited熟悉你给，request-url属性，loading的图片自己准备。可以卸载.loading中。
-	if(!className) {
-		console.error("lazyload_cc方法中缺少className参数");
-		return;
-	}
-	if(!beginHeight) beginHeight=0;
-	lazyDivList=$("."+className);
-	$(window).scroll(function(){
-		srcTop=$(window).scrollTop();
-		//alert(srcTop);
-		if(srcTop>=beginHeight){
-			lazyDivList.trigger("lazyme",$(window).scrollTop());
-		}				
-	});
-	lazyDivList.bind("lazyme",function(e,scrTop){
-		var offset=$(this).offset().top;
-		var interval=$(window).height()-$(this).height();//当前页面可视高度
-		var sumB=offset;
-		var sumS=offset-interval;
-		var url=$(this).attr("request-url");
-		if(scrTop>=sumS && scrTop<=sumB){
-			$(this).load(pageContext+"/"+url,function(responseTxt,statusTxt,xhr){
-				if (statusTxt=="success") {
-					$(this).removeClass(className);
-					$(this).css("height","auto");
-					$(this).unbind("lazyme");
-				};
-			});
-		}
-	});
-}
 
 
 

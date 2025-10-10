@@ -6,11 +6,9 @@ export default defineEventHandler(async (event) => {
     ? '?' + new URLSearchParams(query).toString() 
     : '';
   
-  const targetUrl = `http://testtigshop.yufengzhe.cn/api.php${queryString}`;
+  const targetUrl = `http://testtigshop.yufengzhe.cn/apinew.php${queryString}`;
   
-  console.log('Proxying request to:', targetUrl);
-  console.log('Query params:', query);
-  
+  console.log('targetUrl',targetUrl);
   try {
     const response = await fetch(targetUrl, {
       method: 'GET',
